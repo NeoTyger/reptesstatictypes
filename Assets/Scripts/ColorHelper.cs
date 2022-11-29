@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ColorHelper : MonoBehaviour
+public class ColorHelper
 {
-    
+
+    public static Color colorDefault;
+
+    static ColorHelper()
+    {
+        colorDefault = Color.blue;
+    }
 
     public static void ChangeColor(Object obj, Color col)
     {
