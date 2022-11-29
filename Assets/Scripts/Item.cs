@@ -4,27 +4,37 @@ using UnityEngine;
 
 public class Item
 {
-    [SerializeField] protected string itemName;
-    [SerializeField] protected string id;
-    [SerializeField] protected string description;
+    private string itemName;
+    private int id = 0;
+    private string description;
 
-    private static int itemsCreats = 0;
+    public static int itemsCreats = 0;
 
 
-    public Item(string itemName, string id, string description)
+    public Item(string itemName, string description)
     {
             
         //Initialize things here
         this.itemName = itemName;
-        this.id = id;
         this.description = description;
         itemsCreats++;
+        id = itemsCreats;
+    }
 
+    public Item()
+    {
+        itemsCreats++;
+        id = itemsCreats;
     }
 
     public string GetItemName()
     {
         return itemName;
+    }
+    
+    public int GetId()
+    {
+        return id;
     }
 
     public virtual void MyTreat()
